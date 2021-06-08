@@ -1,0 +1,80 @@
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+.page-header img{
+    object-fit: fill;
+    width: 100%;
+    height: 10em;
+    opacity: 0.85;
+    border: violet 10px solid;
+}
+main{
+    font-family: "Arial Rounded MT Bold" ;
+    color: grey;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+h1{
+    text-align: center;
+    color: royalblue;
+}
+h3{
+    font-weight: bolder;
+}
+form{
+    border:  2px solid black;
+    border-radius: 0.5em;
+    padding: 0.25em;
+    margin-bottom: 2.5em;
+}
+label{
+    line-height: 1.5em;
+    color: cornflowerblue;
+    font-style: italic;
+}
+input{
+    border-radius: 0.3em;
+    font-size: 1.2em;
+}
+button{
+    padding: 0.8em;
+    width: 15em;
+    font-family: "Arial Rounded MT Bold" ;
+    background-color: mediumslateblue;
+    border-radius: 0.3em;
+    color: white;
+}
+.display-result{
+    display: flex;
+    justify-content: center;
+}
+output{
+    background-color: rgb(28, 147, 168);
+    text-align: center;
+    width: 33%;
+    height: 5em;
+    margin-right: 2em;
+    color: white;
+    border-radius: 0.3em;
+}
+
+@media only screen and (min-width: 71em) {
+        form{
+            padding: 1.5em 5em 1.5em 14em;
+        }
+        main{
+            margin-left: 20em;
+            margin-right: 20em;
+        }
+        output{
+            padding-top: 2em;
+        }
+    
+
+  }

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
     evaluateButton.addEventListener('click', (event, yourName, partnerName)=>{
         event.preventDefault();
-        if(yourName==='' && partnerName===''){
+        if(yourName===null && partnerName===''){
             textResult.innerHTML = 
             `Enter two names`
         } else {

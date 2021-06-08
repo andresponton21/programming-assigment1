@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
             `These are the results for ${yourName} and ${partnerName}`
         }
         
-        //evalForm.reset()
+        evalForm.reset()
         
     })
 

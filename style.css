@@ -21,6 +21,7 @@ main{
     color: grey;
     margin-left: 2em;
     margin-right: 2em;
+    text-align: center;
 }
 h1{
     text-align: center;
@@ -37,7 +38,7 @@ form{
     border:  2px solid black;
     border-radius: 0.5em;
     padding: 0.25em;
-    margin-bottom: 0.5em;
+    margin-bottom: 2.5em;
 }
 label{
     line-height: 1.5em;
@@ -58,34 +59,35 @@ button{
 }
 .display-result{
     display: flex;
-    justify-content: center;
+    text-align: center;
 }
 output{
     background-color: rgb(28, 147, 168);
     text-align: center;
-    width: 33%;
+    width: 45%;
     height: 5em;
     margin-right: 2em;
     color: white;
     border-radius: 0.3em;
     font-weight: bolder;
 }
-footer{
-    background-color: violet;
-    position: sticky;
-    
-}
+
 
 @media only screen and (min-width: 71em) {
-        form{
-            padding: 1.5em 5em 0.5em 14em;
-        }
+       
         main{
             margin-left: 20em;
             margin-right: 20em;
+            text-align: center;
+            font-size: 1.5em;
+
         }
         output{
             padding-top: 2em;
+            margin-left: 2em;
+        }
+        button{
+            font-size: 0.8em;
         }
     
 

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
+    // getting the html values
     let yourName = document.querySelector('#your-name')
     let partnerName = document.querySelector('#partner-name')
     const evaluateButton = document.querySelector('#evaluate')
@@ -7,47 +8,51 @@ document.addEventListener('DOMContentLoaded', function(){
     let evalForm = document.querySelector('#evalForm')
     let textResult = document.querySelector('.textResult')
 
-
-    yourName.addEventListener('change', event => {
-        yourName = event.target.value
-        console.log(yourName)
-    })
-    partnerName.addEventListener('change', event => {
-        partnerName = event.target.value
-        console.log(partnerName)
-    })
-    evaluateButton.addEventListener('click', (event, yourName, partnerName)=>{
+   // adding an event listener to the form
+    evaluateButton.addEventListener('click', (event)=>{
         event.preventDefault();
-        if(yourName===null && partnerName===''){
+        // works only if inputs have values
+        if( yourName.value && partnerName ){
+        //invoke the getMatch function defined below using input values as parameters
+            getMatch(yourName.value, partnerName.value);
             textResult.innerHTML = 
-            `Enter two names`
-        } else {
-            
-            getMatch(yourName, partnerName);
-            textResult.innerHTML = 
-            `These are the results for ${yourName} and ${partnerName}`
+            `These are the results for "${yourName.value.toUpperCase()}" and "${partnerName.value.toUpperCase()}"`
+        // reseting the form's input
+            evalForm.reset()
+        // timeout function encouraging the user to try again
+            setTimeout(() => {
+            textResult.innerHTML='Try different names!!!'
+                
+            }, 4000);
         }
         
-        evalForm.reset()
-        
     })
+
 
    function getMatch(name1, name2){
     fetch(`https://love-calculator.p.rapidapi.com/getPercentage?fname=${name1}&sname=${name2}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "ac7bdfed04mshacf733bfbf50588p133f52jsn9ae86e2b0c99",
+            "x-rapidapi-key": "d01bef06d8msh65491a939b54f7cp109236jsn8b8d29335c4d",
             "x-rapidapi-host": "love-calculator.p.rapidapi.com"
             
         }
     })
+    // getting response and appliying json method
     .then(response => response.json())
     .then(response => {
-        console.log(response.result)
-        console.log(response.percentage)
-        successRate.innerHTML = `Your possible success is: ${response.percentage} %`
+        // displaying data in document
+        successRate.innerHTML = `Your possible success is: ${response.percentage}%`
         result.innerHTML = `"${response.result}"`
+
+        // timeout function encouraging the user to try again
+
+        setTimeout(() => {
+            successRate.innerHTML ='TRY'
+            result.innerHTML = 'AGAIN'
+        }, 3500);
     })
+    // catch function for possible errors
     .catch(err => {
         console.error(err);
     });

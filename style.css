@@ -39,11 +39,16 @@ form{
     border-radius: 0.5em;
     padding: 0.25em;
     margin-bottom: 2.5em;
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
 }
 label{
     line-height: 1.5em;
     color: cornflowerblue;
     font-style: italic;
+    margin-top: 1em;
 }
 input{
     border-radius: 0.3em;
@@ -56,6 +61,7 @@ button{
     background-color: mediumslateblue;
     border-radius: 0.3em;
     color: white;
+    margin-top: 1em;
 }
 .display-result{
     display: flex;
